@@ -1,0 +1,108 @@
+@use "sass:math";
+@import "_mixins";
+
+//*======<ШРИФТЫ>============================================================================================================
+//<Подключаем шрифты>
+//&display=swap&subset=cyrillic-ext
+@import "fonts";
+
+//<Иконочные шрифты>
+//@import "icons";
+
+//<Шрифт по умолчанию>
+$fontFamily: "Montserrat", serif;
+$fontSize: rem(16);
+
+//*======<ПЕРЕМЕННЫЕ>=========================================================================================================
+$maxWidth: 1920;
+$minWidth: 320px;
+
+$maxWidthContainer: 1292px;
+$maxWidthContainerLayout: 1200px;
+$containerPadding: 40;
+$maxWidthContainer: $maxWidthContainerLayout + $containerPadding;
+
+//<Брейкпоинты>
+$md1: $maxWidthContainerLayout;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+
+//-- Mobile first (min-width)
+// $mdm1: 1200;
+// $mdm2: 992;
+// $mdm3: 768;
+// $mdm4: 576;
+
+//<Основные цвета сайта>
+$primary: #ff4646;
+$primary10: rgba(255, 70, 70, 0.1);
+$dark: #181c29;
+$white: #fff;
+$white20: rgba(255, 255, 255, 0.2);
+$white40: rgba(255, 255, 255, 0.4);
+$tagPurple: #4361ff;
+$tagPink: #ff43f7;
+$tagGreen: #06a44f;
+$bgCard: #ecf3f8;
+$overlay: rgba(24, 28, 41, 0.8);
+
+//*======<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ, ОБОЛОЧКА>==========================================================================================
+@import "_nullstyle";
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	position: relative;
+	background-color: $white;
+	color: $dark;
+	font-family: $fontFamily;
+	font-size: $fontSize;
+	line-height: 1.48;
+	&.lock {
+		overflow: hidden;
+	}
+}
+
+.wrapper {
+	max-width: 1440px;
+	margin: 0 auto;
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+//*======<ОСНОВНАЯ СЕТКА>======================================================================================================
+.container {
+	max-width: 1292px;
+	margin: 0 auto;
+	padding: 0px 8px;
+	// @media (max-width: ($md2+px)) {
+	// 	padding: 0px 30px;
+	// }
+	// @media (max-width: ($md3+px)) {
+	// 	max-width: 708px;
+	// }
+	// @media (max-width: ($md4+px)) {
+	// 	max-width: none;
+	// 	padding: 0px 10px;
+	// }
+}
+
+//*========<ПОДКЛЮЧЕНИЕ ФАЙЛОВ>==================================================================================================
+//----UI СТИЛИ, ФОРМЫ И ГОТОВЫЕ КЛАССЫ----
+@import "ui";
+@import "popup";
+//@import "forms";
+//----СТИЛИ СТРАНИЦ И ЭЛЕМЕНТОВ----
+@import "home";
+@import "gifts";
+@import "header";
+@import "footer";

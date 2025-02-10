@@ -1,0 +1,327 @@
+.page-home {
+	flex: 1 1 auto;
+	border-radius: 20px;
+	background-color: #ff4646;
+}
+
+//*==< HERO start>==============================================================================>
+.hero {
+	background:
+		url("../img/backgrounds/bg-ball.png") center -40px / cover no-repeat,
+		url("../img/backgrounds/bg-snow.png") center -38px / cover no-repeat;
+	padding: 60px 0px;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	@media (max-width: $maxWidthContainer) {
+		background:
+			url("../img/backgrounds/bg-ball.png") center 0 / cover no-repeat,
+			url("../img/backgrounds/bg-snow.png") center 0 / cover no-repeat;
+	}
+	// .hero__container
+	&__container {
+	}
+	// .hero__content
+	&__content {
+		padding: 60px 0px;
+		color: $white;
+		max-width: 430px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 12px;
+	}
+	// .hero__caption
+	&__caption {
+	}
+	// .hero__title
+	&__title {
+	}
+	// .hero__button
+	&__button {
+	}
+}
+//*==< HERO end>================================================================================>
+
+//*==< ABOUT start>=============================================================================>
+.about {
+	background: url("../img/backgrounds/bg-snow.png") -58px 0 / cover no-repeat;
+	padding: 60px 0px;
+	@media (max-width: $maxWidthContainer) {
+		background: url("../img/backgrounds/bg-snow.png") -394px 0 / cover no-repeat;
+	}
+	// .about__container
+	&__container {
+	}
+	// .about__body
+	&__body {
+		min-height: 528px;
+		display: flex;
+		background-color: $white;
+		border-radius: 20px;
+		@media (max-width: ($md3+px)) {
+			flex-wrap: wrap;
+		}
+	}
+	// .about__content
+	&__content {
+		flex: 0 1 50%;
+		@media (max-width: ($md3+px)) {
+			flex: 0 1 100%;
+		}
+	}
+	// .about__image
+	&__image {
+		background: url("../img/about_santa.jpg") center 0 / cover no-repeat;
+		flex: 0 1 50%;
+		border-radius: 20px;
+		overflow: hidden;
+		@media (max-width: ($md3+px)) {
+			flex: 0 1 100%;
+			min-height: 528px;
+		}
+	}
+}
+
+.content-about {
+	display: flex;
+	align-items: center;
+	@media (max-width: ($md3+px)) {
+		justify-content: center;
+	}
+	// .content-about__body
+	&__body {
+		max-width: 426px;
+		margin: 0px 60px;
+		padding: 60px 0px;
+		@media (max-width: ($md3+px)) {
+			margin: 0px;
+			padding: 60px 20px;
+		}
+	}
+	// .content-about__caption
+	&__caption {
+		color: $primary;
+		margin-bottom: 20px;
+	}
+	// .content-about__title
+	&__title {
+		margin-bottom: 20px;
+		padding-left: 0px;
+	}
+	// .content-about__text
+	&__text {
+	}
+}
+
+//*==< ABOUT end>===============================================================================>
+
+//*==< SLIDER start>============================================================================>
+
+.slider {
+	background: url("../img/backgrounds/bg-snow.png") center -56px / cover no-repeat;
+	padding: 60px 0px;
+	@media (max-width: $maxWidthContainer) {
+		background: url("../img/backgrounds/bg-snow.png") center 0 / cover no-repeat;
+	}
+	// .slider__container
+	&__container {
+	}
+	// .slider__title
+	&__title {
+		margin-bottom: 20px;
+	}
+	// .slider__item
+	&__item {
+	}
+}
+.item-slider {
+	// .item-slider__row
+	&__row {
+		margin-bottom: 20px;
+	}
+	// .item-slider__slide
+	&__slide {
+	}
+	// .item-slider__control
+	&__control {
+		display: flex;
+		justify-content: flex-end;
+		gap: 20px;
+	}
+}
+.slide {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	@include transition(0.4s, 0s);
+	// .slide__section
+	&__section {
+		display: flex;
+		align-items: center;
+		gap: 20px;
+	}
+	// .slide__text
+	&__text {
+		padding-left: 1px; //!PxP
+		text-align: center;
+		font-size: rem(80);
+		color: $white;
+		font-weight: 600;
+		line-height: 1.2;
+		text-transform: uppercase;
+	}
+	// .slide__image
+	&__image {
+		width: 200px;
+		height: 200px;
+		border-radius: 20px;
+		overflow: hidden;
+	}
+}
+.control-slider {
+	// .control-slider__arrow
+	&__arrow {
+		cursor: pointer;
+		width: 56px;
+		height: 56px;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		border: 1px solid $white;
+		border-radius: 20px;
+		@include transition(0.5s, 0s);
+		path {
+			@include transition(0.5s, 0s);
+		}
+		@media (hover: hover) {
+			&:hover {
+				background-color: $white;
+				path {
+					stroke: $primary;
+				}
+			}
+		}
+		&.disabled {
+			pointer-events: none;
+			border: 1px solid $white40;
+			path {
+				stroke-opacity: 0.4;
+			}
+		}
+	}
+}
+//*==< SLIDER end>==============================================================================>
+
+//*==< GIFTS start>=============================================================================>
+.best-gifts {
+	padding: 60px 0px;
+	background: url("../img/backgrounds/bg-snow.png") center -22px / cover no-repeat;
+	@media (max-width: $maxWidthContainer) {
+		background: url("../img/backgrounds/bg-snow.png") center 0 / cover no-repeat;
+	}
+	// .gifts__container
+	&__container {
+	}
+	// .gifts__title
+	&__title {
+		margin-bottom: 20px;
+	}
+	// .gifts__cards
+	&__cards {
+		display: flex;
+		justify-content: center;
+		gap: 12px;
+		@media (max-width: $maxWidthContainer) {
+			flex-wrap: wrap;
+		}
+	}
+}
+//*==< GIFTS end>===============================================================================>
+
+//*==< CTA start>===============================================================================>
+.cta {
+	padding: 60px 0px;
+	background:
+		url("../img/backgrounds/bg-snow.png") -82px 0 / cover no-repeat,
+		url("../img/backgrounds/bg-forest.png") center 0 / cover no-repeat;
+	@media (max-width: $maxWidthContainer) {
+		background:
+			url("../img/backgrounds/bg-snow.png") -418px 0 / cover no-repeat,
+			url("../img/backgrounds/bg-forest.png") center 0 / cover no-repeat;
+	}
+	@media (max-width: ($md3+px)) {
+		background:
+			url("../img/backgrounds/bg-snow.png") -654px 0 / cover no-repeat,
+			url("../img/backgrounds/bg-forest.png") center 0 / cover no-repeat;
+	}
+	// .cta__container
+	&__container {
+		padding: 60px 0px;
+	}
+	// .cta__content
+	&__content {
+		padding: 60px 0px;
+		max-width: 426px;
+		margin: 0 auto;
+		color: $white;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 18px;
+		text-align: center;
+	}
+	// .cta__title
+	&__title {
+	}
+	// .cta__button
+	&__button {
+		margin-bottom: 2px; //!PxP
+	}
+	// .cta__timer
+	&__timer {
+	}
+}
+
+.block-timer {
+	// .block-timer__title
+	&__title {
+		margin-bottom: 8px;
+	}
+	// .block-timer__body
+	&__body {
+		display: flex;
+		align-items: center;
+		padding: 8px 12px 12px;
+		max-width: 344px;
+		min-height: 72px;
+		background: $white40;
+		border-radius: 20px;
+	}
+	// .block-timer__section
+	&__section {
+		position: relative;
+		width: 80px;
+		@media (max-width: 360px) {
+			width: 70px;
+		}
+		flex: 0 1 25%;
+		&:not(:last-child) {
+			&::before {
+				content: "";
+				position: absolute;
+				top: 50%;
+				transform: translate(0px, -50%);
+				right: 0;
+				width: 2px;
+				height: 20px;
+				background-color: $white20;
+			}
+		}
+	}
+}
+
+//*==< CTA end>=================================================================================>

@@ -1,0 +1,411 @@
+//<FORM>=============================================================================================
+.form {
+	padding: 30px 0px;
+	max-width: 600px; //
+	margin: 0px auto; //
+	//	&__row {
+	//		display: flex;
+	//		margin: 0px -15px;
+	//	}
+	//	&__column {
+	//		padding: 0px 15px;
+	//	}
+	&__body {
+		//покрывало при отправке
+		position: relative;
+		&::after {
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			background: rgba(51, 51, 51, 0.8) url("../img/icons/loading.gif") center / 50px no-repeat;
+			opacity: 0;
+			visibility: hidden;
+		}
+		&._sending::after {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+	&__item {
+		margin: 0px 0px 20px 0px;
+	}
+	&__label {
+		font-size: 18px;
+		display: block;
+		margin: 0px 0px 10px 0px;
+	}
+	&__input {
+	}
+	&__select {
+	}
+	&__button {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		height: 60px;
+		border-radius: 5px;
+		padding: 0px 20px;
+		font-size: 18px;
+		color: #fff;
+		background-color: rebeccapurple;
+		line-height: 25 / 18 * 100%;
+		text-transform: uppercase;
+		cursor: pointer;
+		@include transition(0.3s, 0s);
+		@media (min-width: ($md2+px)) {
+			&:hover {
+				opacity: 0.8;
+			}
+		}
+		//&:active {
+		//}
+	}
+}
+
+//<INPUT>============================================================================================
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+.input {
+	display: block;
+	height: 40px;
+	width: 100%;
+	padding: 0px 20px;
+	border: 1px solid #000;
+	border-radius: 0px !important;
+	@include transition(0.3s, 0s);
+	&::placeholder {
+		@include transition(0.5s, 0s);
+	}
+	&:focus::placeholder {
+		font-size: 12px;
+		transform: translate3d(0, -14px, 0);
+	}
+	&:focus {
+		border: 1px solid rgb(124, 113, 10);
+	}
+	&._error {
+		border: 2px solid red;
+	}
+}
+textarea.input {
+	resize: none; //vertical
+	min-height: 120px;
+	padding: 20px;
+	&::placeholder {
+		@include transition(0.5s, 0s);
+	}
+	&:focus::placeholder {
+		font-size: 12px;
+		transform: translate3d(0, -10px, 0);
+	}
+}
+
+//<CHECKBOX>=========================================================================================================
+.checkbox {
+	&._error .checkbox__label::before {
+		border: 1px solid red;
+	}
+	&__input {
+		display: none;
+		&:checked + .checkbox__label::after {
+			transform: scale(1);
+		}
+	}
+	&__label {
+		position: relative;
+		display: inline-flex;
+		align-items: center;
+		font-size: 16px;
+		line-height: 140%;
+		cursor: pointer;
+		&::before {
+			content: "";
+			align-self: flex-start;
+			flex: 0 0 24px;
+			height: 24px;
+			border: 1px solid #000;
+			background-color: #fff;
+			border-radius: 4px;
+			margin: 0px 10px 0px 0px;
+		}
+		&::after {
+			content: "";
+			position: absolute;
+			width: 16px;
+			height: 16px;
+			top: 4px;
+			left: 4px;
+			background-color: #7a956b;
+			border-radius: 4px;
+			transform: scale(0);
+			@include transition(0.3s, 0s);
+		}
+	}
+}
+//<OPTIONS [RADIO]>=======================================================================================================
+.options {
+	padding: 10px 0px 0px 0px;
+	&__item {
+		margin: 0px 0px 10px 0px;
+	}
+	&__input {
+		display: none;
+		&:checked + .options__label::after {
+			transform: scale(1);
+		}
+	}
+	&__label {
+		position: relative;
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+		font-size: 16px;
+		line-height: 140%;
+		&::before {
+			content: "";
+			align-self: flex-start;
+			flex: 0 0 24px;
+			height: 24px;
+			background-color: #fff;
+			border: 1px solid #000;
+			border-radius: 50%;
+			margin: 0px 10px 0px 0px;
+		}
+		&::after {
+			content: "";
+			position: absolute;
+			width: 16px;
+			height: 16px;
+			top: 4px;
+			left: 4px;
+			border-radius: 50%;
+			background-color: #7a956b;
+			transform: scale(0);
+			@include transition(0.3s, 0s);
+		}
+	}
+}
+//<SELECT>====================================================================================================
+.select {
+	position: relative;
+	&__item {
+		position: relative;
+	}
+	&__title {
+		color: #000;
+		border: 1px solid #d9d9d9;
+		background-color: #fff;
+		cursor: pointer;
+		border-radius: 5px;
+	}
+	&__value {
+		display: flex;
+		font-size: 16px;
+		height: 50px;
+		padding: 0px 20px;
+		align-items: center;
+		justify-content: space-between;
+		flex-direction: row-reverse;
+		span {
+			height: 1em;
+			overflow: hidden;
+			display: -webkit-box;
+			-webkit-line-clamp: 1;
+			-webkit-box-orient: vertical;
+		}
+		&::before {
+			content: "";
+			display: inline-block;
+			@include transition(0.3s, 0s);
+			width: 11px;
+			height: 7px;
+			background: url("../img/icons/select.svg") center / 100% no-repeat;
+		}
+	}
+	&__options {
+		color: #000;
+		display: none;
+		position: absolute;
+		top: 49px;
+		border-radius: 0 0 4px 4px;
+		min-width: 100%;
+		left: 0;
+		background-color: #fff;
+		border-top: 0;
+		border: 1px solid #d9d9d9;
+		border-top: 0;
+		font-size: 16px;
+		padding: 0px 0px 5px 0px;
+	}
+	&__option {
+		cursor: pointer;
+		padding: 10px 20px;
+		margin: 0px 0px 0px 0px;
+	}
+	&._active {
+		z-index: 5;
+	}
+	&._active .select__value::before {
+		transform: rotate(-180deg);
+	}
+	&._active.select__options {
+		display: block;
+	}
+}
+
+//<FILE>====================================================================================================
+.file {
+	&__item {
+		position: relative;
+	}
+	&__input {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		opacity: 0;
+		font-size: 0; //чтобы не пропадал cursor
+		cursor: pointer;
+	}
+	&__button {
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		min-height: 40px;
+		padding: 0px 20px;
+		border-radius: 5px;
+		border: 1px solid #000;
+		background-color: #fff;
+		color: #000;
+	}
+	&__preview {
+		display: inline-block;
+		max-width: 100px;
+		padding: 10px 0px 0px 0px;
+		img {
+			max-width: 100%;
+		}
+	}
+}
+//<RATING>=============================================================================================
+// .simple-rating {
+// 	position: relative;
+// 	display: inline-block;
+// 	font-size: 40px; //размер ★
+// 	&:before {
+// 		content: "★★★★★";
+// 		display: block;
+// 	}
+// 	&__items {
+// 		position: absolute;
+// 		width: 100%;
+// 		height: 100%;
+// 		top: 0;
+// 		left: 0;
+// 		display: flex;
+// 		flex-direction: row-reverse;
+// 		overflow: hidden;
+// 	}
+// 	&__item {
+// 		position: absolute;
+// 		width: 0%;
+// 		height: 0%;
+// 		top: 0;
+// 		left: 0;
+// 		opacity: 0;
+// 		visibility: hidden;
+// 		&:checked,
+// 		&:checked ~ .simple-rating__label {
+// 			color: #ffd300;
+// 		}
+// 	}
+// 	&__label {
+// 		flex: 0 0 20%;
+// 		height: 100%;
+// 		cursor: pointer;
+// 		color: #fff;
+// 		&:before {
+// 			content: "★";
+// 			display: block;
+// 			transition: all 0.3s ease 0s;
+// 		}
+// 		&:hover,
+// 		&:hover ~ .simple-rating__label,
+// 		&:checked ~ .simple-rating__label:hover {
+// 			color: #ffef9f;
+// 		}
+// 	}
+// }
+//-------------------------------------------------------------------------------------------
+.rating {
+	display: flex;
+	align-items: flex-end;
+	font-size: 40px;
+	line-height: 0.75;
+	transition: opacity 0.3s ease 0s;
+	-webkit-transition: opacity 0.3s ease 0s;
+	-moz-transition: opacity 0.3s ease 0s;
+	-ms-transition: opacity 0.3s ease 0s;
+	-o-transition: opacity 0.3s ease 0s;
+	&__body {
+		position: relative;
+		&:before {
+			content: "★★★★★";
+			display: block;
+		}
+	}
+	&__active {
+		position: absolute;
+		width: 0%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		overflow: hidden;
+		&:before {
+			content: "★★★★★";
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			color: #ffd300;
+		}
+	}
+	&__items {
+		display: flex;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+	}
+	&__item {
+		flex: 0 0 20%;
+		height: 100%;
+		opacity: 0;
+	}
+	&__value {
+		font-size: 50%;
+		line-height: 1;
+		padding: 0px 0px 0px 10px;
+	}
+	&.rating_sending {
+		opacity: 0.2;
+	}
+	&.rating_set .rating__active,
+	&.rating_set .rating__item {
+		cursor: pointer;
+	}
+}

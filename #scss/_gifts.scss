@@ -1,0 +1,62 @@
+.page-gifts {
+	flex: 1 1 auto;
+	border-radius: 20px;
+	background-color: #ff4646;
+}
+
+//*==< GIFTS start>==============================================================================>
+.gifts {
+	padding: 60px 0px;
+	background: url("../img/backgrounds/bg-garland.png") 0 0 / contain no-repeat;
+	// .gifts__container
+	&__container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 19px;
+	}
+	// .gifts__title
+	&__title {
+		text-align: center;
+		color: $white;
+		max-width: 430px;
+	}
+	// .gifts__tab-header
+	&__tab-header {
+		display: flex;
+		justify-content: center;
+		li:not(:last-child) {
+			margin-right: 8px;
+			@media (max-width: 500px) {
+				margin-right: 0px;
+			}
+		}
+	}
+
+	// .gifts__tab-header-item
+	&__tab-header-item {
+		color: $white;
+		@include transition(0.5s, 0s);
+		@media (hover: hover) {
+			&:hover {
+				background-color: $white20;
+			}
+		}
+		&--active {
+			pointer-events: none;
+			background-color: $white20;
+		}
+		@media (max-width: 500px) {
+			padding: 12px 8px;
+		}
+	}
+	// .gifts__tab-content
+	&__tab-content {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 12px;
+	}
+}
+
+//*==< GIFTS end>================================================================================>
