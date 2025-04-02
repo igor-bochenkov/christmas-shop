@@ -51,49 +51,49 @@ $overlay: rgba(24, 28, 41, 0.8);
 @import "_nullstyle";
 
 html {
-	scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-	position: relative;
-	background-color: $white;
-	color: $dark;
-	font-family: $fontFamily;
-	font-size: $fontSize;
-	line-height: 1.48;
-	&.lock {
-		overflow: hidden;
-	}
+  position: relative;
+  background-color: $white;
+  color: $dark;
+  font-family: $fontFamily;
+  font-size: $fontSize;
+  line-height: 1.48;
+  &.lock {
+    overflow: hidden;
+  }
 }
 
 .wrapper {
-	max-width: 1440px;
-	margin: 0 auto;
-	min-height: 100%;
-	overflow: hidden;
-	display: flex;
-	flex-direction: column;
+  max-width: 1440px;
+  margin: 0 auto;
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 img {
-	max-width: 100%;
-	height: auto;
+  max-width: 100%;
+  height: auto;
 }
 //*======<ОСНОВНАЯ СЕТКА>======================================================================================================
 .container {
-	max-width: 1292px;
-	margin: 0 auto;
-	padding: 0px 8px;
-	// @media (max-width: ($md2+px)) {
-	// 	padding: 0px 30px;
-	// }
-	// @media (max-width: ($md3+px)) {
-	// 	max-width: 708px;
-	// }
-	// @media (max-width: ($md4+px)) {
-	// 	max-width: none;
-	// 	padding: 0px 10px;
-	// }
+  max-width: 1292px;
+  margin: 0 auto;
+  padding: 0px 8px;
+  // @media (max-width: ($md2+px)) {
+  // 	padding: 0px 30px;
+  // }
+  // @media (max-width: ($md3+px)) {
+  // 	max-width: 708px;
+  // }
+  // @media (max-width: ($md4+px)) {
+  // 	max-width: none;
+  // 	padding: 0px 10px;
+  // }
 }
 
 //*========<ПОДКЛЮЧЕНИЕ ФАЙЛОВ>==================================================================================================

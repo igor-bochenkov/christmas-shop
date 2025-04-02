@@ -281,7 +281,10 @@ a {
 .arrow-top path {
   stroke: #ff4646;
 }
-.arrow-top--hide {
+.arrow-top:active {
+  opacity: 0.8;
+}
+.arrow-top.is-hide {
   display: none;
 }
 
@@ -519,6 +522,26 @@ a {
 }
 .popup--harmony .card-gift__tag {
   color: #ff43f7;
+}
+
+.superpower__snowflakes--1 .snowflake:first-child {
+  opacity: 1;
+}
+
+.superpower__snowflakes--2 .snowflake:nth-child(-n+2) {
+  opacity: 1;
+}
+
+.superpower__snowflakes--3 .snowflake:nth-child(-n+3) {
+  opacity: 1;
+}
+
+.superpower__snowflakes--4 .snowflake:nth-child(-n+4) {
+  opacity: 1;
+}
+
+.superpower__snowflakes--5 .snowflake {
+  opacity: 1;
 }
 
 .page-home {
